@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
 
@@ -13,14 +14,24 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
         android:background="@color/cardview_dark_background"
         android:text="Show Toast" />
 
-    <androidx.constraintlayout.utils.widget.ImageFilterButton
-        android:layout_centerHorizontal="true"
+    <EditText
+        android:id="@+id/typeMessage"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:layout_marginTop="200dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_centerHorizontal="true"
+        android:hint="Enter your message."
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/sendMessageToNextActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true"
+        android:text="Navigate" />
 
 </RelativeLayout>
