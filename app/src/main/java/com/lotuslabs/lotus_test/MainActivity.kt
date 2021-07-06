@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             val message = sendMessageToNextActivity.text.toString()
 
             val intent = Intent(this, SecondActivity::class.java)
-
+            intent.putExtra("SendMessage", message)
             startActivity(intent)
 
         }
