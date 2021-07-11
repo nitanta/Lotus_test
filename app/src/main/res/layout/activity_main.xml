@@ -34,4 +34,20 @@
         android:layout_centerHorizontal="true"
         android:text="Navigate" />
 
+    <Button
+        android:id="@+id/shareToOtherApps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:text="Share To Other Apps" />
+
+    <Button
+        android:id="@+id/showRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        android:text="Recycle/Card" />
+
 </RelativeLayout>

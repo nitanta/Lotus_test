@@ -30,5 +30,26 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
+        showRecyclerView.setOnClickListener {
+            Log.i("Main Activity", "Recycler view button was clicked")
+
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
+
+        shareToOtherApps.setOnClickListener {
+            Log.i("Main Activity", "Share to other apps button was clicked")
+            Toast.makeText(this, "Share to other apps button was clicked", Toast.LENGTH_SHORT).show()
+
+            val message = sendMessageToNextActivity.text.toString()
+
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT, message)
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent, "Share to"))
+
+        }
     }
 }
