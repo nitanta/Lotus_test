@@ -43,7 +43,7 @@ class HobbiesAdapter(val context: Context, val hobbies: List<Hobby>): RecyclerVi
             itemView.imgShare.setOnClickListener {
 
                 currentHobby?.let {
-                    val message = currentHobby.title + " Clicked"
+                    val message = currentHobby!!.title + " Clicked"
 
                     val intent = Intent()
                     intent.action = Intent.ACTION_SEND
