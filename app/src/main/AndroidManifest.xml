@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lotus_test">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,8 +18,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SecondActivity"/>
-        <activity android:name=".RecyclerActivity"/>
+        <activity android:name=".activities.SecondActivity"/>
+        <activity android:name=".activities.RecyclerActivity"/>
     </application>
 
 </manifest>

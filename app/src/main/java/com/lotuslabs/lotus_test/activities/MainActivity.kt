@@ -1,46 +1,48 @@
-package com.lotuslabs.lotus_test
+package com.lotuslabs.lotus_test.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.lotuslabs.lotus_test.AppConstants
+import com.lotuslabs.lotus_test.R
+import com.lotuslabs.lotus_test.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        val TAG: String = MainActivity::class.java.simpleName
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         showToast.setOnClickListener {
-            Log.i("Main Activity", "Button was clicked")
-            Toast.makeText(this, "Button was clicked", Toast.LENGTH_LONG).show()
+            showToast("Button was clicked", Toast.LENGTH_SHORT)
         }
 
         sendMessageToNextActivity.setOnClickListener {
-            Log.i("Main Activity", "Second button was clicked")
-            Toast.makeText(this, "Second button was clicked", Toast.LENGTH_SHORT).show()
+            showToast("Second button was clicked")
 
             val message = sendMessageToNextActivity.text.toString()
 
             val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("SendMessage", message)
+            intent.putExtra(AppConstants.SEND_MESSAGE_KEY, message)
             startActivity(intent)
-
         }
 
         showRecyclerView.setOnClickListener {
-            Log.i("Main Activity", "Recycler view button was clicked")
+            Log.i(TAG, "Recycler view button was clicked")
 
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
 
         shareToOtherApps.setOnClickListener {
-            Log.i("Main Activity", "Share to other apps button was clicked")
-            Toast.makeText(this, "Share to other apps button was clicked", Toast.LENGTH_SHORT).show()
+            showToast("Share to other apps button was clicked")
 
             val message = sendMessageToNextActivity.text.toString()
 
@@ -49,7 +51,6 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(Intent.EXTRA_TEXT, message)
             intent.type = "text/plain"
             startActivity(Intent.createChooser(intent, "Share to"))
-
         }
     }
 }
